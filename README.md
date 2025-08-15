@@ -21,7 +21,7 @@
 | user               | references | null: false, foreign_key: true |
 | date               | date       | null: false |
 | workout_id         | integer    | null: false |
-| body_goal_id       | integer    | null: false |
+| body_goal_id       | integer    |
 
 ### Association
 - belongs_to :user

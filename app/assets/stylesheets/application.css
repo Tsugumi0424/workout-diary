@@ -26,7 +26,7 @@ body {
   justify-content: center;
 }
 
-.button-group{
+.button-group {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,23 +34,26 @@ body {
   margin-top: 1.5rem;
 }
 
-.main-button {
-  width: 80px;
-  padding: 0.75rem 4rem;
-  background-color: rgba(255, 255, 255, 0.55);
+.button-group .main-button {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 200px;
   border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.55);
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   color: #444;
   font-family: 'Yu Mincho', serif;
   font-size: 1rem;
   text-align: center;
-  text-decoration: none;
-  border: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
+  box-sizing: border-box;
+  display: inline-block;
 }
 
 .mini-btn-group {
@@ -72,6 +75,7 @@ body {
 .mini-btn:hover {
   opacity: 1;
 }
+
 
 
 /* error message */
@@ -206,10 +210,14 @@ select:focus {
   transition: border-color 0.2s ease;
 }
 
-.form-control:focus {
-  border-color: #a0c4ff;
-  outline: none;
+.form-control:focus,
+input:focus {
+  border-color: #f8b5d1;
+  box-shadow: 0 0 4px rgba(248, 181, 209, 0.5);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+
 
 .password-wrapper {
   position: relative;
