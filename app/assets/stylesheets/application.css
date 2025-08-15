@@ -1,15 +1,262 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import "reset";
+
+
+body {
+  font-family: 
+    'Yu Mincho',             /* Windows 日本語 */
+    '游明朝体',               /* Windows / Mac 共通日本語 */
+    'Hiragino Mincho ProN',  /* Mac 日本語 */
+    'Cambria',               /* 英字用 */
+    'Georgia',               /* 英字用 */
+    sans-serif;              /* 最後の保険 */
+
+  background-color: #fffacd;
+
+
+  color: #444;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.actions {
+  margin: 2rem 0 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.button-group{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.main-button {
+  width: 80px;
+  padding: 0.75rem 4rem;
+  background-color: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  color: #444;
+  font-family: 'Yu Mincho', serif;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mini-btn-group {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mini-btn {
+  font-size: 0.9rem;
+  color: #444;
+  text-decoration: underline;
+  text-align: center;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.mini-btn:hover {
+  opacity: 1;
+}
+
+
+/* error message */
+.devise-error-messges {
+  padding-bottom: 2rem;
+}
+
+h3.error-heading {
+  font-size: 1rem;
+  color: #cc3366;
+  margin-bottom: 2rem;
+}
+
+.error-list {
+  margin: 0;
+  padding: 0 0 2rem 1rem;
+  list-style-position: inside;
+}
+
+.error-list li {
+  color: #cc3366;
+  font-size: 0.7rem;
+  margin-bottom: 0.3em;
+}
+
+
+/*top画面*/
+.top-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.top-title {
+  font-size: 1.8rem;
+  margin-bottom: 4rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+
+/*login,signup画面*/
+.auth-wrapper h2 {
+  font-size: 2rem;
+  font-weight: 100;
+  margin-bottom: 3rem;
+}
+
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 2rem 2rem 2rem;
+}
+
+/* form field */
+.auth-form {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+  min-height: 400px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.field {
+  margin-bottom: 1.5rem;
+}
+
+.field label {
+  display: block;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #444;
+  margin-bottom: 0.3rem;
+}
+
+.field em {
+  display: block;
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 0.2rem;
+}
+
+.field input {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 0.4em 0.6em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+  border: 1px solid rgba(255, 182, 193, 0.6);
+}
+
+.password-hint {
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(100, 100, 100, 0.6);
+  margin-top: 6px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+  border-color: #a0c4ff;
+  outline: none;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: center;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: #222;
+}
+
+.toggle-icon.tilted {
+  transform: translateY(-43%) translateX(-30%);
+}
+
+.toggle-icon.open {
+  transform: translateY(-68%);
+}
+
+
+
+
+.field-checkbox label {
+  font-size: 0.6rem;
+  color: #444;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.field-checkbox {
+  text-align: center;
+}
+
+
+
+
+.top-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 300px;
+}

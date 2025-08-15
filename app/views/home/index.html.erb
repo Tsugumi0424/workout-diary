@@ -1,0 +1,14 @@
+<div class="top-wrapper">
+  <h1 class="top-title">Work Out </br> diary</h1>
+
+  <div class="button-group">
+    <%= link_to "menu", root_path, class: "main-button" %>
+    <%= link_to "records", records_path, class: "main-button" %>
+    <%= link_to "archive", archives_path, class: "main-button" %>
+    <div class="mini-btn-group">
+      <%= link_to "how to", root_path, class: "mini-btn" %>
+      <%= link_to "sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: "mini-btn" %>
+    </div>
+  </div>
+
+</div>

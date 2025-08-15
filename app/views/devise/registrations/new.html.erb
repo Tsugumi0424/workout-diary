@@ -1,0 +1,46 @@
+<div class="auth-wrapper">
+  <h2>sign up</h2>
+
+  <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'auth-form', local: true do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.label :nickname %>
+      <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+        <div class="password-hint">
+          <em>(Please enter at least <%= @minimum_password_length %> characters to continue.)</em>
+        </div>
+      <% end %>
+      <div class="password-wrapper">
+        <%= f.password_field :password, autocomplete: "new-password", id: "password", class: "form-control" %>
+        <span id="toggle-password" class="toggle-icon" data-target="password" aria-label="Toggle password visibility">∼</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %>
+      <div class="password-wrapper">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", id: "password-confirmation", class: "form-control" %>
+        <span id="toggle-password-confirmation" class="toggle-icon" data-target="password_confirmation" aria-label="Toggle password visibility">∼</span>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <%= f.submit "sign up", class: "main-button" %>
+      <%= link_to "home", root_path, class: "mini-btn" %>
+    </div>
+
+  <% end %>
+</div>
+
+

@@ -1,0 +1,36 @@
+<div class="auth-wrapper">
+  <h2>log in</h2>
+
+  <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'auth-form', local: true do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.label :nickname %>
+      <%= f.text_field :nickname, autofocus: true, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <div class="password-wrapper">
+        <%= f.password_field :password, id: "password", class: "form-control" %>
+        <span id="toggle-password" class="toggle-icon" data-target="password" aria-label="Toggle password visibility">∼</span>
+      </div>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field-checkbox">
+        <label>
+          <%= f.check_box :remember_me %>
+          remember me
+        </label>
+      </div>
+    <% end %>
+
+    <div class="button-group">
+      <%= f.submit "log in", class: "main-button" %>
+      <%= link_to "sign up", new_user_registration_path, class: "mini-btn" %>
+      <%= link_to "home", root_path, class: "mini-btn" %>
+    </div>
+
+  <% end %>
+</div>

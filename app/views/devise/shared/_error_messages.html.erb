@@ -1,0 +1,14 @@
+<% if resource.errors.any? %>
+  <div class="devise-error-messages" data-turbo-cache="false">
+    <h3 class="error-heading">
+      <%= I18n.t("errors.messages.not_saved",
+                 count: resource.errors.count,
+                 resource: resource_name).html_safe %>
+    </h3>
+    <ul class="error-list">
+      <% resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
