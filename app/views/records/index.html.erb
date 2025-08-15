@@ -1,2 +1,23 @@
-<h1>Records#index</h1>
-<p>Find me in app/views/records/index.html.erb</p>
+<div class="records-wrapper">
+  <script>var today = new Date();
+    console.log(today.getMonth() + 1 + "/"+ today.getDate() + today.getDay());
+  </script>
+
+  <%= form_with model: @record, url: records_path, id: 'new_record', class: 'auth-form', local: true do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    #<div class="record-form-group">
+      #<%= f.collection_select(:body_goal_id, BodyGoal.all, :id, :name, {include_blank: "body goal select"}, {class:"select-box", id:"body_goal"}) %>
+    #</div>
+
+    <div class="record-field">
+      <div class="record-detail">
+
+
+      </div>
+    </div>
+
+    #<%= f.label :email %>
+      #<%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    #<% end %>
+</div>
