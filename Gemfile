@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-require 'database_cleaner/active_record'
 
 ruby '3.2.0'
 
