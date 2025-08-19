@@ -4,8 +4,8 @@ import "controllers"
 
 document.addEventListener("turbo:load", () => {
   const toggles = [
-    { iconId: "toggle-password", inputId: "password" },
-    { iconId: "toggle-password-confirmation", inputId: "password-confirmation" }
+    { iconId: "toggle-password", inputId: "user_password" },
+    { iconId: "toggle-password-confirmation", inputId: "user_password_confirmation" }
   ];
 
   toggles.forEach(({ iconId, inputId }) => {

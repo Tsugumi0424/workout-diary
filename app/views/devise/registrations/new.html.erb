@@ -22,7 +22,7 @@
         </div>
       <% end %>
       <div class="password-wrapper">
-        <%= f.password_field :password, autocomplete: "new-password", id: "password", class: "form-control" %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
         <span id="toggle-password" class="toggle-icon" data-target="password" aria-label="Toggle password visibility">∼</span>
       </div>
     </div>
@@ -30,7 +30,7 @@
     <div class="field">
       <%= f.label :password_confirmation %>
       <div class="password-wrapper">
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", id: "password-confirmation", class: "form-control" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
         <span id="toggle-password-confirmation" class="toggle-icon" data-target="password_confirmation" aria-label="Toggle password visibility">∼</span>
       </div>
     </div>

@@ -1,5 +1,8 @@
-@import "reset";
-
+/*
+ *= require_tree .
+ *= require_self
+ */ 
+ @import "reset";
 
 body {
   font-family: 
@@ -11,8 +14,6 @@ body {
     sans-serif;              /* 最後の保険 */
 
   background-color: #fffacd;
-
-
   color: #444;
   margin: 0;
   padding: 0;

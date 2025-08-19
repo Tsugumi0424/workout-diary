@@ -12,11 +12,9 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root 'top#index'
-  get "/home", to: "home#index"
+  get '/home', to: 'home#index'
 
-  resources :records, only: [:index] #, :show, :new, :create
-  resources :archives, only: [:index] #, :show
-  #resources :menus, only: [:index]
-
-
+  resources :records, only: [:index] # , :show, :new, :create
+  resources :archives, only: [:index] # , :show
+  # resources :menus, only: [:index]
 end
