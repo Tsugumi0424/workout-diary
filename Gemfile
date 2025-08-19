@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+require 'database_cleaner/active_record'
 
 ruby '3.2.0'
 
@@ -47,6 +48,9 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows]
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rspec-rails', '~> 4.0.0'
 end
 
 group :development do
@@ -66,6 +70,7 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  #gem 'database_cleaner-active_record'
 end
 
 group :production do
@@ -74,4 +79,3 @@ end
 
 gem 'devise'
 gem 'pry-rails'
-
