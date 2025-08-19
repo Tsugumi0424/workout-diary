@@ -1,0 +1,20 @@
+<% if resource.errors.any? || flash[:alert].present? %>
+  <div class="devise-error-messages" data-turbo-cache="false">
+    <% if resource.errors.any? %>
+      <h3 class="error-heading">
+        <%= I18n.t("errors.messages.not_saved",
+                   count: resource.errors.count,
+                   resource: resource_name).html_safe %>
+      </h3>
+    <% end %>
+
+    <ul class="error-list">
+      <% resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      <% if flash[:alert].present? %>
+        <li><%= flash[:alert] %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
