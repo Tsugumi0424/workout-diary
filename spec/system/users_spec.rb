@@ -86,7 +86,6 @@ RSpec.describe 'ユーザー新規登録', type: :system, js: true do
       expect(User.count).to eq 0
     end
   end
-
 end
 
 RSpec.describe 'ログイン', type: :system, js: true do
@@ -111,7 +110,6 @@ RSpec.describe 'ログイン', type: :system, js: true do
       fill_in 'user_password', with: @user.password
       # log inボタンを押す
       click_button 'log in'
-      #find('input[name="commit"]').click
       # 各ページへの遷移ボタンが表示されていることを確認
       expect(page).to have_content('menu')
       expect(page).to have_content('record')
@@ -154,5 +152,4 @@ RSpec.describe 'ログイン', type: :system, js: true do
       expect(page).to have_current_path(new_user_session_path)
     end
   end
-
 end
